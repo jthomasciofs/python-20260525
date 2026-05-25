@@ -1,6 +1,6 @@
 """
 Analizzatore di Spese JSON 
-
+Questo è un commento nuovo. Cosa succede sul fork?
 Requisiti da completare:
 1. Verificare che il file JSON esiste usando pathlib.
 2. Caricare i dati dal file JSON.
