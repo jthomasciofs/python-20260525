@@ -8,7 +8,6 @@ Requisiti da completare:
 
 BUG ALERT: Ci sono 2 bug nascosti nel codice... Trovali e correggili!
 """
-import cowsay
 import json
 import sys
 from pathlib import Path
