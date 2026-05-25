@@ -1,0 +1,9 @@
+[
+    {"categoria": "Cibo", "importo": 45.50},
+    {"categoria": "Trasporti", "importo": 20.00},
+    {"categoria": "Cibo", "importo": 12.80},
+    {"categoria": "Intrattenimento", "importo": 35.00},
+    {"categoria": "Bollette", "importo": 85.00},
+    {"categoria": "Trasporti", "importo": 15.50},
+    {"categoria": "Cibo", "importo": 8.50}
+]
