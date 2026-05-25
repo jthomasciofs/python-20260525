@@ -20,7 +20,7 @@ def carica_spese(percorso_file: Path) -> list:
     # Se il file NON esiste, stampare un errore e terminare il programma con sys.exit(1).
     
     # BUG 1: C'è un errore nella modalità di apertura del file per la lettura di un JSON
-    with open(percorso_file, 'w', encoding='utf-8') as f:
+    with open(percorso_file, 'r', encoding='utf-8') as f:
         dati = json.load(f)
     
     return dati
@@ -42,18 +42,20 @@ def analizza_spese(lista_spese: list):
         totale_generale += importo
         
         # Raggruppamento nel dizionario
-        # TO-DO: Completare la logica. 
-        # Se la categoria esiste già nel dizionario 'spese_per_categoria', aggiungi l'importo.
-        # Altrimenti, crea la chiave nel dizionario con l'importo iniziale.
-        pass
+        if categoria in spese_per_categoria:
+            spese_per_categoria[categoria] += importo
+        else:
+            spese_per_categoria[categoria] = importo
 
+
+    print(spese_per_categoria)
     # Stampa dei risultati
     print(f"\n--- RISULTATI ANALISI ---")
     print(f"Spesa Totale Generale: €{totale_generale:.2f}")
     print("Spese per Categoria:")
     
     # BUG 2: C'è un errore di sintassi/metodo nell'iterazione del dizionario per stampare chiave e valore.
-    for cat, tot in spese_per_categoria.keys():
+    for cat, tot in spese_per_categoria.items():
         print(f" - {cat}: €{tot:.2f}")
 
 def main():
@@ -64,7 +66,7 @@ def main():
     # Controllo che sia stato passato l'argomento del file
     if len(sys.argv) < 2:
         print("Errore: Specifica il file JSON delle spese!")
-        print("Uso: python analizzatore.py <nome_file.json>")
+        print("Uso: python python_progetto_1.py <nome_file.json>")
         sys.exit(1)
         
     # Prendiamo il nome del file dagli argomenti di sys
