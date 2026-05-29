@@ -20,7 +20,7 @@ def carica_spese(percorso_file: Path) -> list:
     # Se il file NON esiste, stampare un errore e terminare il programma con sys.exit(1).
     if not percorso_file.exists():
         print("Percorso inserito non valido.... terminando programma...")
-        sys.exit()
+        sys.exit(1)
 
 
     # BUG 1: C'è un errore nella modalità di apertura del file per la lettura di un JSON
